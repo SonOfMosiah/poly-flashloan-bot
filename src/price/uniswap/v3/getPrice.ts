@@ -7,7 +7,10 @@ dotEnvConfig();
 const maticProvider = new ethers.providers.JsonRpcProvider(
   process.env.ALCHEMY_POLYGON_RPC_URL
 );
-// https://polygonscan.com/address/0xb27308f9F90D607463bb33eA1BeBb41C27CE5AB6
+const ethProvider = new ethers.providers.JsonRpcProvider(
+  process.env.ALCHEMY_ETHEREUM_RPC_URL
+);
+// https://polygonscan.com/address/0xb27308f9F90D607463bb33eA1BeBb41C27CE5AB6 || https://etherscan.io/address/0xb27308f9F90D607463bb33eA1BeBb41C27CE5AB6
 const quoterAddress = "0xb27308f9F90D607463bb33eA1BeBb41C27CE5AB6";
 const quoterContract = new ethers.Contract(
   quoterAddress,
@@ -29,6 +32,7 @@ export const getPriceOnUniV3 = async (
   amountIn: BigNumber,
   fee: number
 ): Promise<BigNumber> => {
+  // contract.callStatic.METHOD_NAME (no state change)
   const quotedAmountOut = await quoterContract.callStatic.quoteExactInputSingle(
     tokenIn,
     tokenOut,

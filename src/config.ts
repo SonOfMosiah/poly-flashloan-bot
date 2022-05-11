@@ -5,8 +5,8 @@ export const renderInterval = 1 * 1000;
 // interval of price check (ms)
 export const interval = 4 * 1000;
 
-export const loanAmount = 10000;
-export const diffAmount = 10; // Not enough amount to return loan
+export const loanAmount = 100;
+export const diffAmount = 1; // Not enough amount to return loan
 
 //export const chainId = 1;// Ethereum
 //export const chainId = 56;// Binance Smart Chain
@@ -21,18 +21,18 @@ export const explorerURL = "https://polygonscan.com";
  */
 
 export const baseTokens = [
-  // ERC20Token.DAI,
+  ERC20Token.DAI,
   // ERC20Token.WETH,
-  ERC20Token.USDC,
-  ERC20Token.USDT,
+  // ERC20Token.USDC,
+  // ERC20Token.USDT,
   // ERC20Token.WMATIC,
 ];
 
 export const tradingTokens = [
-  ERC20Token.DAI,
-  ERC20Token.WETH,
-  ERC20Token.USDC,
-  ERC20Token.USDT,
+  // ERC20Token.DAI,
+  // ERC20Token.WETH,
+  // ERC20Token.USDC,
+  // ERC20Token.USDT,
   ERC20Token.WMATIC,
 ];
 
@@ -41,8 +41,7 @@ export const tradingTokens = [
  * Polyscan: https://polygonscan.com/address/0x568a23ad22041683468cd1d3a6968d7e7dc20d40
  * if you have deployed your own contract, you can use it instead of the default one
  */
-export const flashloanAddress: string =
-  "0x33d8d437796bd43bdccc6740c585f4a15d1070b7";
+export const flashloanAddress: string = process.env.CONTRACT_ADDRESS!;
 
 /**
  * The bot can trade on UniswapV2 fork dexes(ex. SushiSwap) and UniswapV3

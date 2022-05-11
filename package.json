@@ -2,8 +2,8 @@
   "name": "solidity-examples",
   "version": "1.0.0",
   "main": "dist/index.js",
-  "repository": "https://github.com/yuichiroaoki/solidity-examples.git",
-  "author": "yuichiroaoki",
+  "repository": "https://github.com/ammonwerner1/solidity-examples.git",
+  "author": "Ammon Werner",
   "license": "MIT",
   "scripts": {
     "server": "nodemon src/index.ts",
@@ -15,16 +15,13 @@
     "postpublish": "pinst --enable"
   },
   "devDependencies": {
-    "@types/jest": "latest",
     "@uniswap/sdk-core": "^3.0.1",
     "@uniswap/v3-sdk": "^3.8.1",
     "husky": "latest",
-    "jest": "latest",
     "lint-staged": "latest",
     "nodemon": "latest",
     "pinst": "latest",
-    "prettier": "latest",
-    "ts-jest": "latest"
+    "prettier": "latest"
   },
   "dependencies": {
     "@openzeppelin/contracts": "latest",
